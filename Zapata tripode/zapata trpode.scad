@@ -46,7 +46,7 @@ module base(){
             translate([0,0,2]) rotate(45) cylinder(h=8, r1=sqrt(41.5*41.5/4 + 41.5*41.5/4), r2= sqrt(33*33/4 + 33*33/4), $fn=4);
         }
     
-        rotate(45) cylinder(h=8, r1=sqrt(33*33/4 + 33*33/4), r2= sqrt(29*29/4 + 29*29/4), $fn=4);
+        rotate(45) cylinder(h=5, r1=sqrt(33*33/4 + 33*33/4), r2= sqrt(29*29/4 + 29*29/4), $fn=4);
     }
 }
 
