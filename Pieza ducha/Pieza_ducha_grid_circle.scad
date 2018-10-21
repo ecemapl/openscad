@@ -14,7 +14,7 @@ meshSolid=0.5;
 // width of blank part of grid 
 meshSpace=2;  
 // thickness in Z direction
-thickness=1;  
+thickness=2;  
 
 //-------------------------------------------------
 meshX=gridX-(borderX*2);
@@ -69,10 +69,13 @@ union() {
     difference() {
         base();
 
+        translate([28,28,-2]) rotate(-45) linear_extrude(height = 32)  union() {
         p4 = [[-14, -2], [14, -2], [14, 2], [-14, 2]];
-        translate([28,28,-2]) rotate(-45) linear_extrude(height = 32)  polygon(points = p4);
-        p5 = [[-8,5, -2], [8,5, -2], [8,5, 2], [-8,5, 2]];
-        translate([25,25,-2]) rotate(-45) linear_extrude(height = 32)  polygon(points = p5);
+        polygon(points = p4);
+        p5 = [[-8.5, -6], [8.5, -6], [8.5, -2], [-8.5, -2]];
+        polygon(points = p5);
+
+        }
 
     }
  
