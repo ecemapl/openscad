@@ -5,10 +5,10 @@ a = 97;
 // Distancia entre cuerda y borde exterior
 b = 24;
 // ancho total
-d = 64;
+d = 68;
 
 // grosor
-g = 2;
+g = 6;
 
 // Calculo del radio
 // La pendiente de la semicuerda es c/b
@@ -18,12 +18,12 @@ r = sqrt(c*c + ((c*c/b)*(c*c/b)));
 module base(rad,grueso){
     difference(){
         translate([0,-rad+d-grueso/2,0]) difference(){
-            cylinder(h=11, r=rad, center=false, $fn=100);
+            cylinder(h=12, r=rad, center=false, $fn=100);
             translate([-1.5*rad,-rad-d+grueso,-5]) cube([3*rad,2*rad,30]);
         }
         union(){
-        translate([98-grueso/2,-5,-5]) cube([400,80,60]);
-        translate([-400-(98-grueso/2),-5,-5]) cube([400,80,60]);
+        translate([99-grueso/2,-5,-5]) cube([400,80,60]);
+        translate([-400-(99-grueso/2),-5,-5]) cube([400,80,60]);
         }
     }
 }
@@ -69,6 +69,15 @@ translate([50,2,2]) cube([2,50,2]);
 translate([-50,2,2]) cube([2,50,2]);
 translate([0,2,2]) cube([2,55,2]);
 translate([-85,25,2]) cube([170,2,2]);
-translate([-5,d-5,8]) prism(10,5,3.5);
-translate([5,4.5,8]) rotate(180) prism(10,5,3.5);
 
+//pestañas
+translate([-10,d-7,9]) prism(20,6,3.5);
+rotate(5) translate([-50,d-7,9]) prism(20,6,3.5);
+rotate(-5) translate([30,d-7,9]) prism(20,6,3.5);
+translate([10,7,9]) rotate(180) prism(20,5,3.5);
+translate([70,7,9]) rotate(180) prism(20,5,3.5);
+translate([-50,7,9]) rotate(180) prism(20,5,3.5);
+
+//regla
+//translate([-95,8,15]) cube ([190,2,2]);
+//translate([0,4,15]) cube ([2,60,2]);
